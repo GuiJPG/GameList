@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity     //Configura a classe java para que seja equivalente a uma tabela no BD.
 @Table(name = "tb_game")
-public class Games {
+public class Game {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +28,11 @@ public class Games {
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 
-    public Games(){
+    public Game(){
 
     }
 
-    public Games(long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription,
+    public Game(long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription,
             String longDescription) {
         this.id = id;
         this.title = title;
@@ -133,7 +133,7 @@ public class Games {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Games other = (Games) obj;
+        Game other = (Game) obj;
         if (id != other.id)
             return false;
         return true;
