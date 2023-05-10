@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity     //Configura a classe java para que seja equivalente a uma tabela no BD.
+@Entity // Configura a classe java para que seja equivalente a uma tabela no BD.
 @Table(name = "tb_game")
 public class Game {
 
@@ -22,17 +22,18 @@ public class Game {
     private String platforms;
     private Double score;
     private String imgUrl;
-    
+
     @Column(columnDefinition = "TEXT")
     private String shortDescription;
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 
-    public Game(){
+    public Game() {
 
     }
 
-    public Game(long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription,
+    public Game(long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+            String shortDescription,
             String longDescription) {
         this.id = id;
         this.title = title;
@@ -77,19 +78,19 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlatforms(){
+    public String getPlatforms() {
         return platforms;
     }
 
-    public void setPlatforms(String platforms){
+    public void setPlatforms(String platforms) {
         this.platforms = platforms;
     }
 
-    public Double getScore(){
+    public Double getScore() {
         return score;
     }
 
-    public void setScore(Double score){
+    public void setScore(Double score) {
         this.score = score;
     }
 
@@ -139,8 +140,4 @@ public class Game {
         return true;
     }
 
-   
-    
-
-    
 }
