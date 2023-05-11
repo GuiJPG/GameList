@@ -1,6 +1,7 @@
 package br.com.gamelist.dslist.DTO;
 
 import br.com.gamelist.dslist.entities.Game;
+import br.com.gamelist.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
    
@@ -23,6 +24,14 @@ public class GameMinDTO {
         year = entity.getYear();
         imgUrl = entity.getImgUrl();
         shortDescription = entity.getShortDescription();
+        }
+
+    public GameMinDTO(GameMinProjection projection) {
+            id = projection.getId();
+            title = projection.getTitle();
+            year = projection.getYear();
+            imgUrl = projection.getImgUrl();
+            shortDescription = projection.getShortDescription();
         }
 
     public long getId() {
